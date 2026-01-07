@@ -102,7 +102,7 @@
     font-size: 1.5rem;
     font-weight: 700;
     color: #fff;
-    /* Siempre visible en blanco */
+    /* Texto blanco siempre visible */
     margin-bottom: 1rem;
     letter-spacing: 0.3em;
     text-transform: uppercase;
@@ -114,29 +114,12 @@
     z-index: 5;
 }
 
-/* Solo aplicar el efecto gradient si el navegador lo soporta */
-@supports (background-clip: text) or (-webkit-background-clip: text) {
-    .brandReveal {
-        background: linear-gradient(90deg, #ffffff, #0070f3);
-        -webkit-background-clip: text;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
-
-    .brandReveal:hover {
-        background: linear-gradient(135deg, #0070f3, #00dfd8, #fff, #0070f3);
-        background-size: 200% 200%;
-        -webkit-background-clip: text;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
-        animation: gradientShift 3s ease infinite;
-    }
-}
-
 .brandReveal:hover {
     letter-spacing: 0.4em;
     transform: scale(1.05);
     filter: drop-shadow(0 0 20px rgba(0, 112, 243, 0.5));
+    color: hsl(var(--primary));
+    /* Cambia a azul en hover */
 }
 
 .brandReveal span {

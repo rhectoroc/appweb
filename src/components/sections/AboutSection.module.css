@@ -1,8 +1,14 @@
 .about {
-    padding: 100px 0;
+    padding: 60px 0;
     background-color: hsl(var(--bg-dark));
     position: relative;
     overflow: hidden;
+}
+
+@media (min-width: 768px) {
+    .about {
+        padding: 100px 0;
+    }
 }
 
 .grid {
@@ -29,9 +35,24 @@
 }
 
 .title {
-    font-size: 2.5rem;
-    margin-bottom: 1.5rem;
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
     line-height: 1.2;
+    padding: 0 1rem;
+}
+
+@media (min-width: 640px) {
+    .title {
+        font-size: 2rem;
+        padding: 0;
+    }
+}
+
+@media (min-width: 768px) {
+    .title {
+        font-size: 2.5rem;
+        margin-bottom: 1.5rem;
+    }
 }
 
 .highlight {
@@ -41,8 +62,23 @@
 .description {
     color: hsl(var(--text-muted));
     line-height: 1.8;
-    margin-bottom: 2.5rem;
-    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    font-size: 0.95rem;
+    padding: 0 1rem;
+}
+
+@media (min-width: 640px) {
+    .description {
+        font-size: 1.05rem;
+        padding: 0;
+    }
+}
+
+@media (min-width: 768px) {
+    .description {
+        font-size: 1.1rem;
+        margin-bottom: 2.5rem;
+    }
 }
 
 .valuesGrid {
@@ -60,14 +96,21 @@
 .valueIcon {
     background: rgba(0, 242, 255, 0.1);
     color: hsl(var(--primary));
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: var(--radius-md);
     border: 1px solid rgba(0, 242, 255, 0.2);
     box-shadow: 0 0 15px rgba(0, 242, 255, 0.1);
+}
+
+@media (min-width: 768px) {
+    .valueIcon {
+        width: 60px;
+        height: 60px;
+    }
 }
 
 .valueTitle {

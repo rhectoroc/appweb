@@ -1,16 +1,43 @@
 .pricing {
-    padding: 100px 0;
+    padding: 60px 0;
     background-color: hsl(var(--bg-dark));
+}
+
+@media (min-width: 768px) {
+    .pricing {
+        padding: 100px 0;
+    }
 }
 
 .header {
     text-align: center;
-    margin-bottom: 5rem;
+    margin-bottom: 3rem;
+}
+
+@media (min-width: 768px) {
+    .header {
+        margin-bottom: 5rem;
+    }
 }
 
 .title {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
+    font-size: 1.75rem;
+    margin-bottom: 0.75rem;
+    padding: 0 1rem;
+}
+
+@media (min-width: 640px) {
+    .title {
+        font-size: 2rem;
+        padding: 0;
+    }
+}
+
+@media (min-width: 768px) {
+    .title {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+    }
 }
 
 .highlight {
@@ -29,12 +56,18 @@
 
 .card {
     background: rgba(255, 255, 255, 0.02);
-    padding: 3rem 2rem;
+    padding: 2rem 1.5rem;
     border-radius: var(--radius-lg);
     border: 1px solid rgba(255, 255, 255, 0.05);
     text-align: center;
     position: relative;
     transition: var(--transition-smooth);
+}
+
+@media (min-width: 768px) {
+    .card {
+        padding: 3rem 2rem;
+    }
 }
 
 .card:hover {
@@ -79,9 +112,15 @@
 }
 
 .price {
-    font-size: 4rem;
+    font-size: 3rem;
     font-weight: bold;
     color: #fff;
+}
+
+@media (min-width: 768px) {
+    .price {
+        font-size: 4rem;
+    }
 }
 
 .period {
