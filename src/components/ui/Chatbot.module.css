@@ -91,19 +91,22 @@
 }
 
 @media (max-width: 480px) {
+
+    /* Botón flotante permanece en la esquina inferior derecha */
     .chatbotWrapper {
-        left: 50%;
-        transform: translateX(-50%);
-        right: auto;
+        right: 1rem;
+        bottom: 1rem;
     }
 
+    /* Solo el cuadro del chatbot se centra */
     .container {
         width: calc(100vw - 2rem);
+        max-width: 400px;
         height: 70vh;
         left: 50%;
-        transform: translateX(-50%);
         right: auto;
         bottom: 70px;
+        transform: translateX(-50%);
     }
 }
 
