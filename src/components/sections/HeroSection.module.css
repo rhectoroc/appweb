@@ -101,16 +101,17 @@
 .brandReveal {
     font-size: 1.5rem;
     font-weight: 700;
+    color: #fff;
+    /* Fallback: White text is always visible */
     margin-bottom: 1rem;
     letter-spacing: 0.3em;
     text-transform: uppercase;
-    display: inline-flex;
+    display: flex;
     justify-content: center;
     background: linear-gradient(90deg, #fff, #0070f3);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    color: transparent;
     cursor: pointer;
     transition: all 0.4s ease;
     position: relative;
