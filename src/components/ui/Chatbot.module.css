@@ -5,6 +5,15 @@
     z-index: 2000;
 }
 
+@media (max-width: 480px) {
+    .chatbotWrapper {
+        left: 50%;
+        transform: translateX(-50%);
+        right: auto;
+        bottom: 1rem;
+    }
+}
+
 .iconContainer {
     position: relative;
     display: flex;
@@ -82,10 +91,19 @@
 }
 
 @media (max-width: 480px) {
+    .chatbotWrapper {
+        left: 50%;
+        transform: translateX(-50%);
+        right: auto;
+    }
+
     .container {
-        width: calc(100vw - 4rem);
+        width: calc(100vw - 2rem);
         height: 70vh;
-        right: -1rem;
+        left: 50%;
+        transform: translateX(-50%);
+        right: auto;
+        bottom: 70px;
     }
 }
 

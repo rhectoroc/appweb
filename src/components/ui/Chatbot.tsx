@@ -102,9 +102,26 @@ export default function Chatbot() {
 
             if (response.ok) {
                 const data = await response.json();
-                const botReply = data.output || data.response || "Gracias por tu mensaje. ¿En qué más puedo ayudarte?";
+
+                // Debug: Log the response structure
+                console.log("N8N Response:", data);
+
+                // Try multiple possible response structures
+                const botReply =
+                    data.output ||           // Structure 1
+                    data.response ||         // Structure 2
+                    data.message ||          // Structure 3
+                    data.text ||             // Structure 4
+                    data.data?.output ||     // Nested structure 1
+                    data.data?.response ||   // Nested structure 2
+                    data.data?.message ||    // Nested structure 3
+                    (typeof data === 'string' ? data : null) || // Direct string
+                    "Gracias por tu mensaje. ¿En qué más puedo ayudarte?";
+
+                console.log("Bot Reply:", botReply);
                 setMessages(prev => [...prev, { text: botReply, sender: "bot" }]);
             } else {
+                console.error("HTTP Error:", response.status, response.statusText);
                 throw new Error("Server error");
             }
         } catch (error) {
