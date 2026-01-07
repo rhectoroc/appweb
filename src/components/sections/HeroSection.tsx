@@ -21,44 +21,11 @@ export default function HeroSection() {
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
-                    className={styles.textWrapper}
+                    className={styles.contentInner}
                 >
-                    <motion.span
-                        className={styles.badge}
-                        initial={{ opacity: 0, scale: 0.8 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ delay: 0.2 }}
-                    >
-                        Líderes en Innovación Digital
-                    </motion.span>
-
-                    <motion.div
-                        className={styles.brandReveal}
-                        initial="hidden"
-                        animate="visible"
-                        variants={{
-                            hidden: { opacity: 0 },
-                            visible: {
-                                opacity: 1,
-                                transition: { staggerChildren: 0.08, delayChildren: 0.5 }
-                            }
-                        }}
-                    >
-                        <span>
-                            {"Adriel's Systems".split("").map((char, i) => (
-                                <motion.span
-                                    key={i}
-                                    variants={{
-                                        hidden: { opacity: 0, y: 20, filter: "blur(10px)" },
-                                        visible: { opacity: 1, y: 0, filter: "blur(0px)" }
-                                    }}
-                                    transition={{ duration: 0.5, ease: "easeOut" }}
-                                >
-                                    {char === " " ? "\u00A0" : char}
-                                </motion.span>
-                            ))}
-                        </span>
-                    </motion.div>
+                    <div className={styles.brandWatermark}>
+                        Adriel's Systems
+                    </div>
 
                     <h1 className={styles.title}>
                         Soluciones <span className={styles.highlight}>Tecnológicas</span> <br />
@@ -69,6 +36,15 @@ export default function HeroSection() {
                         Transformamos tus ideas en realidades digitales de alto impacto.
                         Más de 20 años impulsando el éxito de nuestros clientes a nivel global.
                     </p>
+
+                    <motion.span
+                        className={styles.badge}
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ delay: 0.2 }}
+                    >
+                        Líderes en Innovación Digital
+                    </motion.span>
 
                     <div className={styles.ctaWrapper}>
                         <Link href="#planes">
