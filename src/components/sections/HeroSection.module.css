@@ -122,7 +122,10 @@
     -webkit-text-fill-color: transparent;
     animation: gradientFlow 4s linear infinite;
 
-    /* Removed filter: drop-shadow because it causes transparency in Chrome/Edge when used with background-clip: text */
+    /* Prevents blurriness on scale in Chromium */
+    will-change: transform;
+    backface-visibility: hidden;
+    -webkit-font-smoothing: antialiased;
 }
 
 @keyframes gradientFlow {
@@ -152,10 +155,14 @@
 
 .brandReveal:hover {
     letter-spacing: 0.4em;
-    transform: scale(1.05);
+    transform: scale(1.05) translateZ(0);
+    /* translateZ(0) forces GPU rendering for extra sharpness */
     animation: gradientFlow 2s linear infinite;
-    /* Adding text-shadow on hover as a safer alternative to filters for Chrome */
-    text-shadow: 0 0 20px rgba(0, 242, 255, 0.5);
+}
+
+/* Applying glow to spans specifically for sharper rendering in Chrome */
+.brandReveal:hover span {
+    filter: drop-shadow(0 0 8px rgba(0, 242, 255, 0.4));
 }
 
 @keyframes pulseGlow {
