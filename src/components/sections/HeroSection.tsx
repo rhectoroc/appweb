@@ -17,15 +17,15 @@ export default function HeroSection() {
             <div className={styles.gridOverlay}></div>
 
             <div className={`container ${styles.content}`}>
-                <div className={styles.brandWatermark}>
-                    Adriel's Systems
-                </div>
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
                     className={styles.contentInner}
                 >
+                    <div className={styles.brandTitle}>
+                        Adriel's Systems
+                    </div>
 
                     <h1 className={styles.title}>
                         Soluciones <span className={styles.highlight}>Tecnológicas</span> <br />
