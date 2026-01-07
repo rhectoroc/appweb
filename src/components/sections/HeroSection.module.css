@@ -100,13 +100,9 @@
 
 .brandReveal {
     font-size: 1.1rem;
-    /* Reducido para móviles */
     font-weight: 700;
-    color: #fff;
-    /* Texto blanco siempre visible */
     margin-bottom: 1rem;
     letter-spacing: 0.15em;
-    /* Reducido para que quepa en una línea */
     text-transform: uppercase;
     display: block;
     text-align: center;
@@ -114,12 +110,34 @@
     transition: all 0.4s ease;
     position: relative;
     z-index: 5;
+
+    /* Innovative gradient text effect */
+    background: linear-gradient(90deg, #00f2ff, #0070f3, #00dfd8, #00f2ff);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientFlow 4s linear infinite;
+
+    /* Animated glow effect */
+    filter: drop-shadow(0 0 8px rgba(0, 242, 255, 0.6)) drop-shadow(0 0 15px rgba(0, 112, 243, 0.4));
+}
+
+@keyframes gradientFlow {
+    0% {
+        background-position: 0% center;
+    }
+
+    100% {
+        background-position: 200% center;
+    }
 }
 
 @media (min-width: 640px) {
     .brandReveal {
         font-size: 1.5rem;
         letter-spacing: 0.25em;
+        filter: drop-shadow(0 0 12px rgba(0, 242, 255, 0.7)) drop-shadow(0 0 20px rgba(0, 112, 243, 0.5));
     }
 }
 
@@ -128,15 +146,26 @@
         font-size: 2.5rem;
         letter-spacing: 0.3em;
         margin-bottom: 1.5rem;
+        filter: drop-shadow(0 0 15px rgba(0, 242, 255, 0.8)) drop-shadow(0 0 25px rgba(0, 112, 243, 0.6));
     }
 }
 
 .brandReveal:hover {
     letter-spacing: 0.4em;
     transform: scale(1.05);
-    filter: drop-shadow(0 0 20px rgba(0, 112, 243, 0.5));
-    color: hsl(var(--primary));
-    /* Cambia a azul en hover */
+    animation: gradientFlow 2s linear infinite, pulseGlow 1.5s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+
+    0%,
+    100% {
+        filter: drop-shadow(0 0 15px rgba(0, 242, 255, 0.8)) drop-shadow(0 0 25px rgba(0, 112, 243, 0.6));
+    }
+
+    50% {
+        filter: drop-shadow(0 0 25px rgba(0, 242, 255, 1)) drop-shadow(0 0 40px rgba(0, 112, 243, 0.8));
+    }
 }
 
 .brandReveal span {
