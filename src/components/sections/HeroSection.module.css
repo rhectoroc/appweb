@@ -111,6 +111,9 @@
     position: relative;
     z-index: 5;
 
+    /* Fallback color for browsers that don't support clipping */
+    color: #00f2ff;
+
     /* Innovative gradient text effect */
     background: linear-gradient(90deg, #00f2ff, #0070f3, #00dfd8, #00f2ff);
     background-size: 200% auto;
@@ -119,8 +122,7 @@
     -webkit-text-fill-color: transparent;
     animation: gradientFlow 4s linear infinite;
 
-    /* Animated glow effect */
-    filter: drop-shadow(0 0 8px rgba(0, 242, 255, 0.6)) drop-shadow(0 0 15px rgba(0, 112, 243, 0.4));
+    /* Removed filter: drop-shadow because it causes transparency in Chrome/Edge when used with background-clip: text */
 }
 
 @keyframes gradientFlow {
@@ -137,7 +139,6 @@
     .brandReveal {
         font-size: 1.5rem;
         letter-spacing: 0.25em;
-        filter: drop-shadow(0 0 12px rgba(0, 242, 255, 0.7)) drop-shadow(0 0 20px rgba(0, 112, 243, 0.5));
     }
 }
 
@@ -146,14 +147,15 @@
         font-size: 2.5rem;
         letter-spacing: 0.3em;
         margin-bottom: 1.5rem;
-        filter: drop-shadow(0 0 15px rgba(0, 242, 255, 0.8)) drop-shadow(0 0 25px rgba(0, 112, 243, 0.6));
     }
 }
 
 .brandReveal:hover {
     letter-spacing: 0.4em;
     transform: scale(1.05);
-    animation: gradientFlow 2s linear infinite, pulseGlow 1.5s ease-in-out infinite;
+    animation: gradientFlow 2s linear infinite;
+    /* Adding text-shadow on hover as a safer alternative to filters for Chrome */
+    text-shadow: 0 0 20px rgba(0, 242, 255, 0.5);
 }
 
 @keyframes pulseGlow {
