@@ -106,9 +106,9 @@
     margin-bottom: 1rem;
     letter-spacing: 0.3em;
     text-transform: uppercase;
-    display: flex;
-    justify-content: center;
-    background: linear-gradient(90deg, #fff, #0070f3);
+    display: block;
+    text-align: center;
+    background: linear-gradient(90deg, #ffffff, #0070f3);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -134,8 +134,6 @@
 .brandReveal span {
     display: inline-block;
     transition: transform 0.3s ease;
-    color: inherit;
-    -webkit-text-fill-color: inherit;
 }
 
 .brandReveal:hover span {
