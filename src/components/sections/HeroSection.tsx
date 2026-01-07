@@ -32,10 +32,6 @@ export default function HeroSection() {
                         a tu Medida
                     </h1>
 
-                    <p className={styles.subtitle}>
-                        Transformamos tus ideas en realidades digitales de alto impacto.
-                        Más de 20 años impulsando el éxito de nuestros clientes a nivel global.
-                    </p>
 
                     <motion.span
                         className={styles.badge}
