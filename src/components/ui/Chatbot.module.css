@@ -101,6 +101,10 @@
         margin: 0 auto;
         transform: none;
     }
+
+    .messagesArea {
+        padding: 1rem;
+    }
 }
 
 .header {
@@ -172,7 +176,7 @@
 .message {
     display: flex;
     align-items: flex-start;
-    max-width: 85%;
+    max-width: 92%;
 }
 
 .user {
