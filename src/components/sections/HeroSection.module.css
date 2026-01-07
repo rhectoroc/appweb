@@ -180,15 +180,26 @@
 }
 
 .title {
-    font-size: 2.5rem;
-    line-height: 1.1;
-    margin-bottom: 1.5rem;
+    font-size: 1.75rem;
+    /* Reducido para móviles */
+    line-height: 1.2;
+    margin-bottom: 1rem;
     color: #fff;
+    padding: 0 1rem;
+    /* Padding lateral para móviles */
+}
+
+@media (min-width: 640px) {
+    .title {
+        font-size: 3rem;
+        padding: 0;
+    }
 }
 
 @media (min-width: 768px) {
     .title {
         font-size: 4.5rem;
+        margin-bottom: 1.5rem;
     }
 }
 
@@ -198,13 +209,24 @@
 }
 
 .subtitle {
-    font-size: 1.1rem;
+    font-size: 0.95rem;
+    /* Reducido para móviles */
     color: hsl(var(--text-muted));
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
     line-height: 1.6;
+    padding: 0 1.5rem;
+    /* Padding lateral para móviles */
+}
+
+@media (min-width: 640px) {
+    .subtitle {
+        font-size: 1.1rem;
+        margin-bottom: 3rem;
+        padding: 0;
+    }
 }
 
 .ctaWrapper {
