@@ -44,18 +44,20 @@ export default function HeroSection() {
                             }
                         }}
                     >
-                        {"Adriel's Systems".split("").map((char, i) => (
-                            <motion.span
-                                key={i}
-                                variants={{
-                                    hidden: { opacity: 0, y: 20, filter: "blur(10px)" },
-                                    visible: { opacity: 1, y: 0, filter: "blur(0px)" }
-                                }}
-                                transition={{ duration: 0.5, ease: "easeOut" }}
-                            >
-                                {char === " " ? "\u00A0" : char}
-                            </motion.span>
-                        ))}
+                        <span>
+                            {"Adriel's Systems".split("").map((char, i) => (
+                                <motion.span
+                                    key={i}
+                                    variants={{
+                                        hidden: { opacity: 0, y: 20, filter: "blur(10px)" },
+                                        visible: { opacity: 1, y: 0, filter: "blur(0px)" }
+                                    }}
+                                    transition={{ duration: 0.5, ease: "easeOut" }}
+                                >
+                                    {char === " " ? "\u00A0" : char}
+                                </motion.span>
+                            ))}
+                        </span>
                     </motion.div>
 
                     <h1 className={styles.title}>

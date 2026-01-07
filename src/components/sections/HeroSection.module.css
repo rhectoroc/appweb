@@ -122,10 +122,15 @@
     -webkit-text-fill-color: transparent;
     animation: gradientFlow 4s linear infinite;
 
-    /* Prevents blurriness on scale in Chromium */
-    will-change: transform;
+    /* Hardware acceleration hints - Removed conflicting will-change */
     backface-visibility: hidden;
     -webkit-font-smoothing: antialiased;
+}
+
+/* Internal span wrapper handles the animation to avoid Chromium bugs */
+.brandReveal>span {
+    display: inline-block;
+    transition: transform 0.3s ease, letter-spacing 0.4s ease;
 }
 
 @keyframes gradientFlow {
@@ -153,16 +158,10 @@
     }
 }
 
-.brandReveal:hover {
-    letter-spacing: 0.4em;
+.brandReveal:hover>span {
     transform: scale(1.05) translateZ(0);
-    /* translateZ(0) forces GPU rendering for extra sharpness */
-    animation: gradientFlow 2s linear infinite;
-}
-
-/* Applying glow to spans specifically for sharper rendering in Chrome */
-.brandReveal:hover span {
-    filter: drop-shadow(0 0 8px rgba(0, 242, 255, 0.4));
+    letter-spacing: 0.4em;
+    filter: drop-shadow(0 0 10px rgba(0, 242, 255, 0.4));
 }
 
 @keyframes pulseGlow {
