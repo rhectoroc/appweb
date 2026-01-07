@@ -92,14 +92,14 @@
     /* Solo el cuadro del chatbot se centra */
     .container {
         position: fixed;
-        width: calc(100vw - 2rem);
+        left: 1rem;
+        right: 1rem;
+        width: auto;
         max-width: 400px;
         height: 70vh;
-        left: 50%;
-        right: initial;
-        bottom: 70px;
-        transform: translateX(-50%);
-        margin: 0;
+        bottom: 80px;
+        margin: 0 auto;
+        transform: none;
     }
 }
 
