@@ -65,7 +65,7 @@ export const translations = {
                 }
             },
             cta: "Saber Más",
-            ctaMessage: "Saludos, me gustaría recibir más información sobre"
+            ctaMessage: "Quiero saber más sobre"
         },
         pricing: {
             title: <>Ofertas <span className="highlight">Especiales</span></>,
@@ -73,7 +73,7 @@ export const translations = {
             period: "inversión única",
             popularBadge: "Más Popular",
             cta: "Solicitar",
-            ctaMessage: "Saludos me interesa contratar el",
+            ctaMessage: "Quiero contratar el",
             plans: [
                 {
                     name: "Plan Emprendedor",
@@ -221,7 +221,7 @@ export const translations = {
                 }
             },
             cta: "Learn More",
-            ctaMessage: "Hello, I would like to receive more information about"
+            ctaMessage: "I want to know more about"
         },
         pricing: {
             title: <>Special <span className="highlight">Offers</span></>,
@@ -229,7 +229,7 @@ export const translations = {
             period: "one-time investment",
             popularBadge: "Most Popular",
             cta: "Request",
-            ctaMessage: "Hello, I am interested in contracting the",
+            ctaMessage: "I want to hire the",
             plans: [
                 {
                     name: "Entrepreneur Plan",
