@@ -77,7 +77,7 @@ export const translations = {
             plans: [
                 {
                     name: "Plan Emprendedor",
-                    price: "180",
+                    price: "350",
                     subtitle: "La puerta de entrada al mundo digital",
                     description: "Ideal para nuevos proyectos que buscan establecer su presencia online.",
                     features: [
@@ -90,7 +90,7 @@ export const translations = {
                 },
                 {
                     name: "Plan Profesional",
-                    price: "350",
+                    price: "650",
                     subtitle: "Estructura detallada y profesional",
                     description: "Para empresas que requieren mayor comunicación y presencia.",
                     features: [
@@ -103,12 +103,12 @@ export const translations = {
                 },
                 {
                     name: "Plan Business Plus",
-                    price: "600",
+                    price: "1500",
                     subtitle: "Potencia máxima para tu negocio",
                     description: "Solución completa para E-commerce o gestión empresarial.",
                     features: [
                         "Web avanzada con E-commerce",
-                        "Integración con sistemas (HealthCore)",
+                        "Integración con otros sistemas",
                         "Registro de dominio + Hosting premium",
                         "Certificado SSL",
                         "Hasta 20 correos corporativos"
@@ -233,7 +233,7 @@ export const translations = {
             plans: [
                 {
                     name: "Entrepreneur Plan",
-                    price: "180",
+                    price: "350",
                     subtitle: "The gateway to the digital world",
                     description: "Ideal for new projects looking to establish their online presence.",
                     features: [
@@ -246,7 +246,7 @@ export const translations = {
                 },
                 {
                     name: "Professional Plan",
-                    price: "350",
+                    price: "650",
                     subtitle: "Detailed and professional structure",
                     description: "For companies requiring greater communication and presence.",
                     features: [
@@ -259,7 +259,7 @@ export const translations = {
                 },
                 {
                     name: "Business Plus Plan",
-                    price: "600",
+                    price: "1500",
                     subtitle: "Maximum power for your business",
                     description: "Complete solution for E-commerce or business management.",
                     features: [
