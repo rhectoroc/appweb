@@ -130,7 +130,7 @@ export const translations = {
             visit: "Visitar sitio",
             comingSoon: "Próximamente",
             items: [
-                { description: "Remodelación y construcción de casas y espacios.", category: "Construcción" },
+                { description: "Remodelación y construcción de inmuebles.", category: "Construcción" },
                 { description: "Venta y alquiler de propiedades en República Dominicana.", category: "Inmobiliaria" },
                 { description: "Educación y coaching profesional.", category: "Educación" },
                 { description: "Restaurant de sushi en Higuerote, Venezuela.", category: "Restaurante" },
