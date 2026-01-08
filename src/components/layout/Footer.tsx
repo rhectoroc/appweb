@@ -1,8 +1,10 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Facebook, Instagram, Mail, Phone, MapPin } from "lucide-react";
+import { Facebook, Instagram, Mail, Phone, MapPin, Code2, Github, Linkedin, Twitter } from "lucide-react";
 import styles from "./Footer.module.css";
+import { useLanguage } from "@/context/LanguageContext";
+import { translations } from "@/data/translations";
 
 export default function Footer() {
     const { language } = useLanguage();
