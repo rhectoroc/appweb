@@ -141,8 +141,8 @@ export const translations = {
         contact: {
             title: <>Hablemos de tu <span className="highlight">Próximo Proyecto</span></>,
             subtitle: "Estamos listos para llevar tu infraestructura al siguiente nivel.",
-            email: "Email",
-            phone: "Teléfono",
+            email: "cotizaciones@adrielssystems.com",
+            phone: "+584222476127",
             location: "Ubicación",
             locationText: "Nueva Esparta, Isla de Margarita, Venezuela"
         },
