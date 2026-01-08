@@ -297,8 +297,8 @@ export const translations = {
         contact: {
             title: <>Let's Talk About Your <span className="highlight">Next Project</span></>,
             subtitle: "We are ready to take your infrastructure to the next level.",
-            email: "Email",
-            phone: "Phone",
+            email: "cotizaciones@adrielssystems.com",
+            phone: "+58 422-2476127",
             location: "Location",
             locationText: "Nueva Esparta, Margarita Island, Venezuela"
         },
