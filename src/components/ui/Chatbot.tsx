@@ -19,7 +19,7 @@ export default function Chatbot() {
     const [sessionId, setSessionId] = useState("");
     const messagesEndRef = useRef<HTMLDivElement>(null);
 
-    const webhookUrl = "https://adrielssystems-n8n-new.1m85g5.easypanel.host/webhook/d7a4c6a7-50a9-493f-9edf-0fee3f555e66/chat";
+    const webhookUrl = "/api/chat";
 
     useEffect(() => {
         // Initialize Session ID
