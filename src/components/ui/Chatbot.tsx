@@ -90,14 +90,16 @@ export default function Chatbot() {
         setIsTyping(true);
 
         try {
-            const formData = new FormData();
-            formData.append("sessionId", sessionId);
-            formData.append("action", "sendMessage");
-            formData.append("chatInput", text);
-
             const response = await fetch(webhookUrl, {
                 method: "POST",
-                body: formData
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    sessionId: sessionId,
+                    action: "sendMessage",
+                    chatInput: text
+                })
             });
 
             if (response.ok) {
