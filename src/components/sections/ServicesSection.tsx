@@ -81,14 +81,15 @@ export default function ServicesSection() {
                                             </div>
                                         ))}
                                     </div>
-                                    <Link
-                                        href={`https://wa.me/584128507810?text=${encodeURIComponent(`${t.ctaMessage} ${s.title}`)}`}
-                                        target="_blank"
+                                    <button
+                                        className={styles.saberMasBtn}
+                                        onClick={() => {
+                                            const message = `${t.ctaMessage} ${s.title}`;
+                                            window.dispatchEvent(new CustomEvent('chatbot:send', { detail: { message } }));
+                                        }}
                                     >
-                                        <button className={styles.saberMasBtn}>
-                                            {t.cta}
-                                        </button>
-                                    </Link>
+                                        {t.cta}
+                                    </button>
                                 </motion.div>
                             ))}
                         </AnimatePresence>

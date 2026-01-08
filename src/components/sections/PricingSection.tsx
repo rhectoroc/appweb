@@ -51,13 +51,15 @@ export default function PricingSection() {
                                 ))}
                             </ul>
 
-                            <Link
-                                href={`https://wa.me/584128507810?text=${encodeURIComponent(`${t.ctaMessage} ${plan.name}`)}`}
-                                target="_blank"
+                            <button
+                                onClick={() => {
+                                    const message = `${t.ctaMessage} ${plan.name}`;
+                                    window.dispatchEvent(new CustomEvent('chatbot:send', { detail: { message } }));
+                                }}
                                 className={styles.selectBtn}
                             >
                                 {t.cta}
-                            </Link >
+                            </button>
                         </motion.div >
                     ))}
                 </div >

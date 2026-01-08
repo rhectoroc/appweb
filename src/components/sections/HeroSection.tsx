@@ -51,9 +51,17 @@ export default function HeroSection() {
                         <Link href="#planes">
                             <button className={styles.primaryBtn}>{t.ctaPrimary}</button>
                         </Link>
-                        <Link href="#nosotros">
-                            <button className={styles.secondaryBtn}>{t.ctaSecondary}</button>
-                        </Link>
+                        <button
+                            className={styles.secondaryBtn}
+                            onClick={() => {
+                                const message = language === 'es'
+                                    ? "Hola, me gustaría saber más sobre sus servicios."
+                                    : "Hello, I would like to know more about your services.";
+                                window.dispatchEvent(new CustomEvent('chatbot:send', { detail: { message } }));
+                            }}
+                        >
+                            {t.ctaSecondary}
+                        </button>
                     </div>
                 </motion.div>
             </div>
