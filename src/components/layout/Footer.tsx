@@ -41,15 +41,15 @@ export default function Footer() {
                         <div className={styles.logo}>
                             {/* User said "corrige donde va el logo". I will assume they want the image logo if it exists, or a better placement. 
                                 I see `logofinal2.png` in public directory in previous steps. I will use that. */}
-                            <Image src="/logofinal2.png" alt="Adriel's Systems" width={150} height={50} className={styles.footerLogo} />
+                            <Image src="/logofinal2.png" alt="Adriel's Systems" width={200} height={67} className={styles.footerLogo} />
                         </div>
                         <p className={styles.brandDesc}>
                             {t.desc}
                         </p>
                         <div className={styles.socials}>
-                            <a href="#" className={styles.socialLink} aria-label="Facebook"><FacebookIcon size={20} /></a>
-                            <a href="#" className={styles.socialLink} aria-label="Instagram"><InstagramIcon size={20} /></a>
-                            <a href="#" className={styles.socialLink} aria-label="TikTok">
+                            <a href="https://www.facebook.com/profile.php?id=100068244722275" target="_blank" rel="noopener noreferrer" className={styles.socialLink} aria-label="Facebook"><FacebookIcon size={20} /></a>
+                            <a href="https://www.instagram.com/adrielsystems/" target="_blank" rel="noopener noreferrer" className={styles.socialLink} aria-label="Instagram"><InstagramIcon size={20} /></a>
+                            <a href="https://www.tiktok.com/@adrielsystems?lang=es-419" target="_blank" rel="noopener noreferrer" className={styles.socialLink} aria-label="TikTok">
                                 {/* Custom TikTok SVG Icon since Lucide might not have it or I don't want to risk build error */}
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                                     <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" />
