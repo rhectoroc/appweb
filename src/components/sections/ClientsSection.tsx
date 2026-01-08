@@ -14,21 +14,21 @@ export default function ClientsSection() {
 
     const clients = [
         {
-            name: "Ocean Drive",
+            name: "Ocean Construction",
             logo: "/logos/LogoOcean.png",
             desc: t.items[0].description,
             category: t.items[0].category,
-            url: "https://oceanconstructions.us",
+            url: "https://oceanconstruction.us",
         },
         {
-            name: "Autana Group",
+            name: "Autana Group RD",
             logo: "/logos/LogoAutanagrouprd.png",
             desc: t.items[1].description,
             category: t.items[1].category,
             url: "https://autanagrouprd.com",
         },
         {
-            name: "Gente Pro",
+            name: "Gente Pro 80",
             logo: "/logos/Logogentepro80.jpg",
             desc: t.items[2].description,
             category: t.items[2].category,
