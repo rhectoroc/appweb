@@ -6,7 +6,13 @@ import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import styles from "./HeroSection.module.css";
 
+import { useLanguage } from "@/context/LanguageContext";
+import { translations } from "@/data/translations";
+
 export default function HeroSection() {
+    const { language } = useLanguage();
+    const t = translations[language].hero;
+
     return (
         <section id="inicio" className={styles.hero}>
             <div className={styles.dynamicBg}>
@@ -28,8 +34,7 @@ export default function HeroSection() {
                     </div>
 
                     <h1 className={styles.title}>
-                        Soluciones <span className={styles.highlight}>Tecnológicas</span> <br />
-                        a tu Medida
+                        {t.title}
                     </h1>
 
 
@@ -39,15 +44,15 @@ export default function HeroSection() {
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ delay: 0.2 }}
                     >
-                        Líderes en Innovación Digital
+                        {t.badge}
                     </motion.span>
 
                     <div className={styles.ctaWrapper}>
                         <Link href="#planes">
-                            <button className={styles.primaryBtn}>Nuestras Ofertas</button>
+                            <button className={styles.primaryBtn}>{t.ctaPrimary}</button>
                         </Link>
                         <Link href="#nosotros">
-                            <button className={styles.secondaryBtn}>Saber Más</button>
+                            <button className={styles.secondaryBtn}>{t.ctaSecondary}</button>
                         </Link>
                     </div>
                 </motion.div>

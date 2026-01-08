@@ -5,64 +5,58 @@ import { Facebook, Instagram, Mail, Phone, MapPin } from "lucide-react";
 import styles from "./Footer.module.css";
 
 export default function Footer() {
+    const { language } = useLanguage();
+    const t = translations[language].footer;
+
     return (
         <footer className={styles.footer}>
             <div className="container">
-                <div className={styles.mainGrid}>
+                <div className={styles.grid}>
                     <div className={styles.brand}>
                         <div className={styles.logo}>
-                            <Image
-                                src="/logofinal2.png"
-                                alt="Adriel's Systems"
-                                width={180}
-                                height={45}
-                                className={styles.footerLogo}
-                            />
+                            <Code2 size={24} className={styles.logoIcon} />
+                            <span>Adriel's Systems</span>
                         </div>
-                        <p className={styles.brandDesc}>
-                            Más de dos décadas transformando el panorama tecnológico global con
-                            soluciones innovadoras y soporte de clase mundial.
+                        <p className={styles.desc}>
+                            {t.desc}
                         </p>
-                        <div className={styles.socials}>
-                            <Link href="#" className={styles.socialLink}><Facebook size={20} /></Link>
-                            <Link href="#" className={styles.socialLink}><Instagram size={20} /></Link>
+                        <div className={styles.social}>
+                            <a href="#" className={styles.socialLink}><Github size={20} /></a>
+                            <a href="#" className={styles.socialLink}><Linkedin size={20} /></a>
+                            <a href="#" className={styles.socialLink}><Twitter size={20} /></a>
                         </div>
                     </div>
 
                     <div className={styles.links}>
-                        <h4 className={styles.footerTitle}>Enlaces</h4>
-                        <Link href="#inicio">Inicio</Link>
-                        <Link href="#nosotros">Nosotros</Link>
-                        <Link href="#servicios">Servicios</Link>
-                        <Link href="#planes">Ofertas</Link>
+                        <h4 className={styles.linkTitle}>{t.links}</h4>
+                        <ul>
+                            <li><a href="#inicio">Inicio</a></li>
+                            <li><a href="#servicios">Servicios</a></li>
+                            <li><a href="#planes">Planes</a></li>
+                            <li><a href="#contacto">Contacto</a></li>
+                        </ul>
                     </div>
 
                     <div className={styles.links}>
-                        <h4 className={styles.footerTitle}>Legal</h4>
-                        <Link href="#">Términos</Link>
-                        <Link href="#">Privacidad</Link>
-                        <Link href="#">Cookies</Link>
+                        <h4 className={styles.linkTitle}>{t.legal}</h4>
+                        <ul>
+                            <li><a href="#">{t.terms}</a></li>
+                            <li><a href="#">{t.privacy}</a></li>
+                            <li><a href="#">{t.cookies}</a></li>
+                        </ul>
                     </div>
 
-                    <div className={styles.contact}>
-                        <h4 className={styles.footerTitle}>Contacto</h4>
-                        <div className={styles.contactItem}>
-                            <Mail size={18} />
-                            <span>cotizaciones@adrielssystems.com</span>
-                        </div>
-                        <div className={styles.contactItem}>
-                            <Phone size={18} />
-                            <span>+584222476127</span>
-                        </div>
-                        <div className={styles.contactItem}>
-                            <MapPin size={18} />
-                            <span>Nueva Esparta, Isla de Margarita, Venezuela</span>
-                        </div>
+                    <div className={styles.links}>
+                        <h4 className={styles.linkTitle}>{t.contact}</h4>
+                        <ul className={styles.contactList}>
+                            <li>info@adrielssystems.com</li>
+                            <li>+58 412 8507810</li>
+                        </ul>
                     </div>
                 </div>
 
                 <div className={styles.bottom}>
-                    <p>© {new Date().getFullYear()} Adriel's Systems. Todos los derechos reservados.</p>
+                    <p>&copy; {new Date().getFullYear()} Adriel's Systems. {t.rights}</p>
                     <p className={styles.signature}>
                         Developed by <strong>Adriel's Systems</strong> | The Engine of Your Global Software Solutions
                     </p>

@@ -2,49 +2,48 @@
 
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Code, Globe, Server, Cpu, ShieldCheck, Database, Bot } from "lucide-react";
+import { Code, Globe, Server, Cpu, ShieldCheck, Database, Bot, Layout, ArrowRight } from "lucide-react";
 import styles from "./ServicesSection.module.css";
-
-const services = [
-    {
-        id: "web",
-        title: "Diseño y Desarrollo Web",
-        desc: "Creamos sitios web de alto impacto, optimizados para conversión y velocidad.",
-        icon: <Globe size={32} />,
-        features: ["Frontend Moderno", "PWA Ready", "SEO Optimizado", "Diseño UI/UX"]
-    },
-    {
-        id: "hosting",
-        title: "Hosting Premium",
-        desc: "Alojamiento ultra rápido con soporte 24/7 y seguridad integrada.",
-        icon: <Server size={32} />,
-        features: ["Certificados SSL", "Backups diarios", "99.9% Uptime", "Panel de control"]
-    },
-    {
-        id: "vps",
-        title: "Servidores VPS",
-        desc: "Potencia elástica para tus aplicaciones más exigentes.",
-        icon: <Cpu size={32} />,
-        features: ["Recursos dedicados", "Escalabilidad", "Root access", "Discos NVMe"]
-    },
-    {
-        id: "automation",
-        title: "Automatización e IA",
-        desc: "Soluciones inteligentes de automatización con chatbots, asistentes virtuales y flujos de trabajo personalizados. Infraestructura completa con N8N, Redis, PostgreSQL y APIs de Meta.",
-        icon: <Bot size={32} />,
-        features: ["Chatbots Web", "Agendadores de Citas", "Asistentes Empresariales", "Asistentes de Ventas"]
-    }
-];
+import { useLanguage } from "@/context/LanguageContext";
+import { translations } from "@/data/translations";
+import Link from "next/link";
 
 export default function ServicesSection() {
-    const [activeTab, setActiveTab] = useState(services[0].id);
+    const { language } = useLanguage();
+    const t = translations[language].services;
+    const [activeTab, setActiveTab] = useState("web");
+
+    const services = [
+        {
+            id: "web",
+            ...t.items.web,
+            icon: <Layout size={32} />
+        },
+        {
+            id: "hosting",
+            ...t.items.hosting,
+            icon: <Server size={32} />
+        },
+        {
+            id: "vps",
+            ...t.items.vps,
+            icon: <Cpu size={32} />
+        },
+        {
+            id: "automation",
+            ...t.items.automation,
+            icon: <Bot size={32} />
+        }
+    ];
 
     return (
         <section id="servicios" className={styles.services}>
             <div className="container">
                 <div className={styles.header}>
-                    <h2 className={styles.title}>Nuestros <span className={styles.highlight}>Servicios</span></h2>
-                    <p className={styles.subtitle}>Soluciones integrales para llevar tu negocio al siguiente nivel.</p>
+                    <h2 className={styles.title}>
+                        {t.title}
+                    </h2>
+                    <p className={styles.subtitle}>{t.subtitle}</p>
                 </div>
 
                 <div className={styles.contentGrid}>
@@ -82,16 +81,14 @@ export default function ServicesSection() {
                                             </div>
                                         ))}
                                     </div>
-                                    <button
-                                        className={styles.saberMasBtn}
-                                        onClick={() => {
-                                            window.dispatchEvent(new CustomEvent("chatbot:send", {
-                                                detail: { message: `Saludos, me gustaría recibir más información sobre ${s.title}` }
-                                            }));
-                                        }}
+                                    <Link
+                                        href={`https://wa.me/584128507810?text=${encodeURIComponent(`${t.ctaMessage} ${s.title}`)}`}
+                                        target="_blank"
                                     >
-                                        Saber Más
-                                    </button>
+                                        <button className={styles.saberMasBtn}>
+                                            {t.cta}
+                                        </button>
+                                    </Link>
                                 </motion.div>
                             ))}
                         </AnimatePresence>

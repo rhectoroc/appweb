@@ -53,6 +53,8 @@ export const metadata: Metadata = {
 
 import Chatbot from "@/components/ui/Chatbot";
 
+import { LanguageProvider } from "@/context/LanguageContext";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -61,8 +63,10 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body>
-        {children}
-        <Chatbot />
+        <LanguageProvider>
+          {children}
+          <Chatbot />
+        </LanguageProvider>
       </body>
     </html>
   );

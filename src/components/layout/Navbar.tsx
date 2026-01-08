@@ -7,17 +7,16 @@ import { Menu, X } from "lucide-react";
 import styles from "./Navbar.module.css";
 import Image from "next/image";
 
-const navLinks = [
-    { name: "Inicio", href: "#inicio" },
-    { name: "Nosotros", href: "#nosotros" },
-    { name: "Servicios", href: "#servicios" },
-    { name: "Ofertas", href: "#planes" },
-    { name: "Contacto", href: "#contacto" },
-];
+import { useLanguage } from "@/context/LanguageContext";
+import { translations } from "@/data/translations";
+import { Globe } from "lucide-react"; // Importing an icon for the language toggle
+
 
 export default function Navbar() {
     const [isScrolled, setIsScrolled] = useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+    const { language, toggleLanguage } = useLanguage();
+    const t = translations[language].navbar;
 
     useEffect(() => {
         const handleScroll = () => {
@@ -43,13 +42,17 @@ export default function Navbar() {
 
                 {/* Desktop Menu */}
                 <div className={styles.desktopMenu}>
-                    {navLinks.map((link) => (
+                    {t.items.map((link) => (
                         <Link key={link.name} href={link.href} className={styles.navLink}>
                             {link.name}
                         </Link>
                     ))}
+                    <button onClick={toggleLanguage} className={styles.languageToggle} aria-label="Toggle Language">
+                        <Globe size={20} />
+                        <span>{language.toUpperCase()}</span>
+                    </button>
                     <Link href="/signin">
-                        <button className={styles.ctaButton}>Clientes</button>
+                        <button className={styles.ctaButton}>{t.cta}</button>
                     </Link>
                 </div>
 
@@ -72,7 +75,7 @@ export default function Navbar() {
                         exit={{ opacity: 0, y: -20 }}
                     >
                         <div className={styles.mobileLinks}>
-                            {navLinks.map((link) => (
+                            {t.items.map((link) => (
                                 <Link
                                     key={link.name}
                                     href={link.href}
@@ -82,8 +85,12 @@ export default function Navbar() {
                                     {link.name}
                                 </Link>
                             ))}
+                            <button onClick={() => { toggleLanguage(); setMobileMenuOpen(false); }} className={styles.mobileLink} style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                                <Globe size={20} />
+                                {language === 'es' ? 'Cambiar a Inglés' : 'Switch to Spanish'}
+                            </button>
                             <Link href="/signin">
-                                <button className={styles.ctaButtonMobile}>Clientes</button>
+                                <button className={styles.ctaButtonMobile}>{t.cta}</button>
                             </Link>
                         </div>
                     </motion.div>

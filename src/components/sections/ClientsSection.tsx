@@ -2,138 +2,108 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, Briefcase } from "lucide-react";
 import styles from "./ClientsSection.module.css";
-
-const clients = [
-    {
-        name: "Autana Group RD",
-        url: "https://autanagrouprd.com/en/",
-        description: "Venta de propiedades inmobiliarias",
-        category: "Inmobiliaria",
-        logo: "/logos/LogoAutanagrouprd.png"
-    },
-    {
-        name: "Ocean Construction",
-        url: "https://oceanconstruction.us",
-        description: "Remodelación y construcción profesional",
-        category: "Construcción",
-        logo: "/logos/LogoOcean.png"
-    },
-    {
-        name: "Gente Pro 80",
-        url: "https://gentepro80.com",
-        description: "Educación y coaching profesional",
-        category: "Educación",
-        logo: "/logos/Logogentepro80.jpg"
-    },
-    {
-        name: "Sushi Higuerote",
-        url: "https://sushihiguerote.com/en/",
-        description: "Experiencia gastronómica única",
-        category: "Restaurante",
-        logo: "/logos/LogoSushihiguerote.png"
-    },
-    {
-        name: "Cal Miranda",
-        url: "https://calmiranda.com",
-        description: "Venta de materiales de construcción",
-        category: "Materiales",
-        logo: "/logos/LogoCalmiranda.png"
-    },
-    {
-        name: "MotorX",
-        url: null,
-        description: "Compra de vehículos",
-        category: "Automotriz",
-        logo: "/logos/LogoMotorx.jpeg"
-    }
-];
+import { useLanguage } from "@/context/LanguageContext";
+import { translations } from "@/data/translations";
 
 export default function ClientsSection() {
+    const { language } = useLanguage();
+    const t = translations[language].clients;
+
+    const clients = [
+        {
+            name: "Inmobiliaria Mar Azul",
+            logo: "/clients/inmobiliaria.png",
+            desc: t.items[0].description,
+            category: t.items[0].category,
+            url: "https://inmobiliariamarazul.com",
+            bgImage: "/clients/bg-realestate.jpg"
+        },
+        {
+            name: "Constructora Global",
+            logo: "/clients/constructora.png",
+            desc: t.items[1].description,
+            category: t.items[1].category,
+            url: null,
+            bgImage: "/clients/bg-construction.jpg"
+        },
+        {
+            name: "EduTeam Pro",
+            logo: "/clients/eduteam.png",
+            desc: t.items[2].description,
+            category: t.items[2].category,
+            url: "https://eduteampro.com",
+            bgImage: "/clients/bg-education.jpg"
+        },
+        {
+            name: "Gourmet Experience",
+            logo: "/clients/gourmet.png",
+            desc: t.items[3].description,
+            category: t.items[3].category,
+            url: null,
+            bgImage: "/clients/bg-restaurant.jpg"
+        },
+        {
+            name: "Materiales del Caribe",
+            logo: "/clients/materiales.png",
+            desc: t.items[4].description,
+            category: t.items[4].category,
+            url: null,
+            bgImage: "/clients/bg-materials.jpg"
+        },
+        {
+            name: "AutoMarket",
+            logo: "/clients/automarket.png",
+            desc: t.items[5].description,
+            category: t.items[5].category,
+            url: null,
+            bgImage: "/clients/bg-automotive.jpg"
+        }
+    ];
+
     return (
         <section id="clientes" className={styles.clients}>
             <div className="container">
-                <div className={styles.header}>
-                    <motion.span
-                        className={styles.badge}
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                    >
-                        Nuestro Portafolio
-                    </motion.span>
-                    <motion.h2
-                        className={styles.title}
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.1 }}
-                    >
-                        Experiencia de <span className={styles.highlight}>Nuestros Clientes</span>
-                    </motion.h2>
-                    <motion.p
-                        className={styles.subtitle}
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.2 }}
-                    >
-                        Proyectos que transforman negocios y crean experiencias memorables
-                    </motion.p>
-                </div>
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    className={styles.header}
+                >
+                    <span className={styles.badge}>{t.badge}</span>
+                    <h2 className={styles.title}>
+                        {t.title}
+                    </h2>
+                    <p className={styles.subtitle}>
+                        {t.subtitle}
+                    </p>
+                </motion.div>
 
                 <div className={styles.grid}>
-                    {clients.map((client, index) => {
-                        const CardWrapper = client.url ? motion.a : motion.div;
-                        const cardProps = client.url ? {
-                            href: client.url,
-                            target: "_blank",
-                            rel: "noopener noreferrer"
-                        } : {};
-
-                        return (
-                            <CardWrapper
-                                key={client.name}
-                                {...cardProps}
-                                className={styles.card}
-                                initial={{ opacity: 0, y: 30 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: index * 0.1 }}
-                                whileHover={{ y: -10 }}
-                            >
-                                <div className={styles.cardInner}>
-                                    <div className={styles.cardFront}>
-                                        <div className={styles.categoryBadge}>{client.category}</div>
-                                        <div className={styles.logoWrapper}>
-                                            <img
-                                                src={client.logo}
-                                                alt={client.name}
-                                                className={styles.logoImage}
                                             />
-                                        </div>
-                                        <div className={styles.cardContent}>
-                                            <h3 className={styles.cardTitle}>{client.name}</h3>
-                                            <p className={styles.cardDesc}>{client.description}</p>
-                                            {client.url ? (
-                                                <div className={styles.visitButton}>
-                                                    <span>Visitar sitio</span>
-                                                    <ExternalLink size={18} />
-                                                </div>
-                                            ) : (
-                                                <div className={styles.comingSoon}>
-                                                    Próximamente
-                                                </div>
-                                            )}
-                                        </div>
-                                    </div>
-                                </div>
-                            </CardWrapper>
-                        );
-                    })}
+                </div>
+                <div className={styles.cardContent}>
+                    <h3 className={styles.cardTitle}>{client.name}</h3>
+                    <p className={styles.cardDesc}>{client.description}</p>
+                    {client.url ? (
+                        <div className={styles.visitButton}>
+                            <span>Visitar sitio</span>
+                            <ExternalLink size={18} />
+                        </div>
+                    ) : (
+                        <div className={styles.comingSoon}>
+                            Próximamente
+                        </div>
+                    )}
                 </div>
             </div>
-        </section>
+        </div>
+                            </CardWrapper >
+                        );
+})}
+                </div >
+            </div >
+        </section >
     );
 }
