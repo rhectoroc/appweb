@@ -2,7 +2,8 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { ExternalLink, Briefcase } from "lucide-react";
+import { ExternalLink } from "lucide-react";
+import Image from "next/image";
 import styles from "./ClientsSection.module.css";
 import { useLanguage } from "@/context/LanguageContext";
 import { translations } from "@/data/translations";
@@ -13,52 +14,46 @@ export default function ClientsSection() {
 
     const clients = [
         {
-            name: "Inmobiliaria Mar Azul",
-            logo: "/clients/inmobiliaria.png",
+            name: "Ocean Drive",
+            logo: "/logos/LogoOcean.png",
             desc: t.items[0].description,
             category: t.items[0].category,
-            url: "https://inmobiliariamarazul.com",
-            bgImage: "/clients/bg-realestate.jpg"
+            url: "https://oceanconstructions.us",
         },
         {
-            name: "Constructora Global",
-            logo: "/clients/constructora.png",
+            name: "Autana Group",
+            logo: "/logos/LogoAutanagrouprd.png",
             desc: t.items[1].description,
             category: t.items[1].category,
-            url: null,
-            bgImage: "/clients/bg-construction.jpg"
+            url: "https://autanagrouprd.com",
         },
         {
-            name: "EduTeam Pro",
-            logo: "/clients/eduteam.png",
+            name: "Gente Pro",
+            logo: "/logos/Logogentepro80.jpg",
             desc: t.items[2].description,
             category: t.items[2].category,
-            url: "https://eduteampro.com",
-            bgImage: "/clients/bg-education.jpg"
+            url: "https://gentepro80.com",
         },
         {
-            name: "Gourmet Experience",
-            logo: "/clients/gourmet.png",
+            name: "Sushi Higuerote",
+            logo: "/logos/LogoSushihiguerote.png",
             desc: t.items[3].description,
             category: t.items[3].category,
-            url: null,
-            bgImage: "/clients/bg-restaurant.jpg"
+            url: "https://sushihiguerote.com",
         },
         {
-            name: "Materiales del Caribe",
-            logo: "/clients/materiales.png",
+            name: "Calmiranda",
+            logo: "/logos/LogoCalmiranda.png",
             desc: t.items[4].description,
             category: t.items[4].category,
-            url: null,
-            bgImage: "/clients/bg-materials.jpg"
+            url: "https://calmiranda.com",
         },
         {
-            name: "AutoMarket",
-            logo: "/clients/automarket.png",
+            name: "Motor X",
+            logo: "/logos/LogoMotorx.jpeg",
             desc: t.items[5].description,
             category: t.items[5].category,
-            url: null,
-            bgImage: "/clients/bg-automotive.jpg"
+            url: "https://motorxcars.com",
         }
     ];
 
@@ -96,7 +91,13 @@ export default function ClientsSection() {
                                         {client.category}
                                     </div>
                                     <div className={styles.logoWrapper}>
-                                        <Briefcase size={40} className={styles.placeholderLogo} />
+                                        <Image
+                                            src={client.logo}
+                                            alt={client.name}
+                                            width={200}
+                                            height={100}
+                                            className={styles.logoImage}
+                                        />
                                     </div>
                                     <div className={styles.cardContent}>
                                         <h3 className={styles.cardTitle}>{client.name}</h3>

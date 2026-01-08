@@ -130,12 +130,12 @@ export const translations = {
             visit: "Visitar sitio",
             comingSoon: "Próximamente",
             items: [
-                { description: "Venta de propiedades inmobiliarias", category: "Inmobiliaria" },
-                { description: "Remodelación y construcción profesional", category: "Construcción" },
-                { description: "Educación y coaching profesional", category: "Educación" },
-                { description: "Experiencia gastronómica única", category: "Restaurante" },
-                { description: "Venta de materiales de construcción", category: "Materiales" },
-                { description: "Compra de vehículos", category: "Automotriz" }
+                { description: "Remodelación y construcción de casas y espacios.", category: "Construcción" },
+                { description: "Venta y alquiler de propiedades en República Dominicana.", category: "Inmobiliaria" },
+                { description: "Educación y coaching profesional.", category: "Educación" },
+                { description: "Restaurant de sushi en Higuerote, Venezuela.", category: "Restaurante" },
+                { description: "Fábrica de materiales para la construcción (CAL).", category: "Industria" },
+                { description: "Venta de autos y servicios de envíos en EE.UU.", category: "Automotriz" }
             ]
         },
         contact: {
@@ -286,12 +286,12 @@ export const translations = {
             visit: "Visit site",
             comingSoon: "Coming Soon",
             items: [
-                { description: "Real estate property sales", category: "Real Estate" },
-                { description: "Professional remodeling and construction", category: "Construction" },
-                { description: "Education and professional coaching", category: "Education" },
-                { description: "Unique gastronomic experience", category: "Restaurant" },
-                { description: "Construction materials sales", category: "Materials" },
-                { description: "Vehicle purchasing", category: "Automotive" }
+                { description: "Remodeling and construction of homes and spaces.", category: "Construction" },
+                { description: "Property sales and rentals in Dominican Republic.", category: "Real Estate" },
+                { description: "Education and professional coaching.", category: "Education" },
+                { description: "Sushi restaurant in Higuerote, Venezuela.", category: "Restaurant" },
+                { description: "Construction materials factory (Lime).", category: "Industry" },
+                { description: "Car sales and shipping services in the USA.", category: "Automotive" }
             ]
         },
         contact: {
