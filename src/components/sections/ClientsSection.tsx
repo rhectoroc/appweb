@@ -81,29 +81,38 @@ export default function ClientsSection() {
                 </motion.div>
 
                 <div className={styles.grid}>
-                                            />
-                </div>
-                <div className={styles.cardContent}>
-                    <h3 className={styles.cardTitle}>{client.name}</h3>
-                    <p className={styles.cardDesc}>{client.description}</p>
-                    {client.url ? (
-                        <div className={styles.visitButton}>
-                            <span>Visitar sitio</span>
-                            <ExternalLink size={18} />
-                        </div>
-                    ) : (
-                        <div className={styles.comingSoon}>
-                            Próximamente
-                        </div>
-                    )}
+                    {clients.map((client, index) => (
+                        <motion.div
+                            key={index}
+                            initial={{ opacity: 0, scale: 0.9 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: index * 0.1 }}
+                            className={styles.card}
+                        >
+                            <div className={styles.cardInner}>
+                                <div className={styles.cardFront}>
+                                    <div className={styles.logoWrapper}>
+                                        <Briefcase size={40} className={styles.placeholderLogo} />
+                                    </div>
+                                    <h3 className={styles.clientName}>{client.name}</h3>
+                                    <span className={styles.category}>{client.category}</span>
+                                </div>
+                                <div className={styles.cardBack}>
+                                    <p className={styles.clientDesc}>{client.desc}</p>
+                                    {client.url ? (
+                                        <a href={client.url} target="_blank" rel="noopener noreferrer" className={styles.visitBtn}>
+                                            {t.visit} <ExternalLink size={16} />
+                                        </a>
+                                    ) : (
+                                        <span className={styles.comingSoon}>{t.comingSoon}</span>
+                                    )}
+                                </div>
+                            </div>
+                        </motion.div>
+                    ))}
                 </div>
             </div>
-        </div>
-                            </CardWrapper >
-                        );
-})}
-                </div >
-            </div >
-        </section >
+        </section>
     );
 }
