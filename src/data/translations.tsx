@@ -153,6 +153,7 @@ export const translations = {
             terms: "Términos",
             privacy: "Privacidad",
             cookies: "Cookies",
+            security: "Seguridad",
             contact: "Contacto",
             rights: "Todos los derechos reservados."
         }
@@ -309,6 +310,7 @@ export const translations = {
             terms: "Terms",
             privacy: "Privacy",
             cookies: "Cookies",
+            security: "Security",
             contact: "Contact",
             rights: "All rights reserved."
         }

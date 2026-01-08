@@ -68,10 +68,10 @@ export default function Footer() {
 
                     <div className={styles.links}>
                         <h4 className={styles.footerTitle}>{t.legal}</h4>
-                        <a href="#">{t.terms}</a>
-                        <a href="#">{t.privacy}</a>
-                        <a href="#">{t.cookies}</a>
-                        <a href="#">Security</a>
+                        <Link href="/legal/terms">{t.terms}</Link>
+                        <Link href="/legal/privacy">{t.privacy}</Link>
+                        <Link href="/legal/cookies">{t.cookies}</Link>
+                        <Link href="/legal/security">{t.security}</Link>
                     </div>
 
                     <div className={styles.contact}>
